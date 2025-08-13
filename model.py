@@ -4,13 +4,13 @@ import streamlit as st
 import json
 from dotenv import load_dotenv
 from datasets import load_dataset, Dataset
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain, LLMChain
 from langchain.memory import ConversationBufferMemory
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from langchain.callbacks.base import BaseCallbackHandler
 import random
@@ -384,3 +384,4 @@ if st.session_state.intro_done and not st.session_state.completed and st.session
 if st.session_state.completed:
     with st.chat_message("assistant"):
         st.success("🎉 Interview Complete! You’ve done a great job. Keep practicing and good luck with your real interviews!")
+
